@@ -1,0 +1,8 @@
+<div>
+  <h3>Todos</h3>
+  <ul *ngFor="let todo of todos$ | async">
+    <app-todo [todo]="todo"></app-todo>
+  </ul>
+</div>
+
+

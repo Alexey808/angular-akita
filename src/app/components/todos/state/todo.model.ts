@@ -1,12 +1,15 @@
+import { ID } from '@datorama/akita';
+import { guid } from '@datorama/akita';
+
 export interface Todo {
-  id: number;
+  id: ID;
   title: string;
   completed: boolean;
 }
 
 export function createTodo({ id, title }: Partial<Todo>) {
   return {
-    id,
+    id: guid(),
     title,
     completed: false
   } as Todo;
