@@ -1,8 +1,13 @@
 <div>
   <h3>Todos</h3>
+
+  <input [(ngModel)]="dataInput"/>
+  <button (click)="addTodo()">addTodo</button>
+
   <ul *ngFor="let todo of todos$ | async">
     <app-todo [todo]="todo"></app-todo>
   </ul>
+
 </div>
 
 

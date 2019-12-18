@@ -11,12 +11,13 @@ export class TodosService {
     console.log('todos.service -> ', this);
   }
 
+
   update({ id, completed }: Todo) {
     this.todosStore.update(id, { completed });
   }
 
-  add(title) { // todo проверить тип title
-    const todo = createTodo(title);
+  add(title: string) { // todo проверить тип title
+    const todo = createTodo({title});
     this.todosStore.add(todo);
   }
 

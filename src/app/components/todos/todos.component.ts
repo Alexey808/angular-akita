@@ -9,6 +9,7 @@ import {TodosQuery} from './state/todos.query';
 })
 export class TodosComponent implements OnInit {
   todos$;
+  dataInput = 'test';
 
   constructor(
     private todosService: TodosService,
@@ -18,7 +19,10 @@ export class TodosComponent implements OnInit {
   ngOnInit() {
     this.todos$ = this.todosQuery.selectAll();
     this.todos$.subscribe(state => console.log('todos.components -> state ->', state));
+  }
 
-    console.log('todos.components ->', this);
+  addTodo() {
+    this.todosService.add(this.dataInput);
+    this.dataInput = '';
   }
 }
